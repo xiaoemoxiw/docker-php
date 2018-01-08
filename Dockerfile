@@ -4,6 +4,7 @@
 
 FROM php:7.1.12-fpm
 MAINTAINER yuxuewen <8586826@qq.com>
+LABEL version="1.0"
 
 ######
 # You can install php extensions using docker-php-ext-install
