@@ -39,7 +39,7 @@ RUN echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib " > /e
     && echo "deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib " >> /etc/apt/sources.list \
     && echo "deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib " >> /etc/apt/sources.list \
     && echo "deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib" >> /etc/apt/sources.list \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && ntpdate cn.pool.ntp.org
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 
 RUN apt-get update \
