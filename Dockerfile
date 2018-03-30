@@ -2,7 +2,7 @@
 # See: https://hub.docker.com/_/php/
 ######
 
-FROM php:5.6-fpm
+FROM php:7.2.3-fpm
 MAINTAINER yuxuewen <8586826@qq.com>
 
 ######
