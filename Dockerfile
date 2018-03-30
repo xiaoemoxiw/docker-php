@@ -2,7 +2,7 @@
 # See: https://hub.docker.com/_/php/
 ######
 
-FROM php:7.2.3-fpm
+FROM php:7.1-fpm
 MAINTAINER yuxuewen <8586826@qq.com>
 
 ######
@@ -44,9 +44,9 @@ RUN echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib " > /e
 
 RUN apt-get update \
     &&  apt-get install -y \
-        libfreetype6-dev \
+      #  libfreetype6-dev \
         libjpeg62-turbo-dev \
-        libmcrypt-dev \
+      #  libmcrypt-dev \
         libpng12-dev \
         wget \
         vim \
@@ -56,9 +56,9 @@ RUN apt-get update \
         unzip \
         supervisor \
         cron \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd mysql mysqli pdo pdo_mysql zip opcache \
+    #    && docker-php-ext-install -j$(nproc) iconv mcrypt \
+   # && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql zip opcache \
     && composer config -g repo.packagist composer https://packagist.phpcomposer.com \
     && wget https://npm.taobao.org/mirrors/node/v8.9.0/node-v8.9.0-linux-x64.tar.xz \
     && tar xf node-v8.9.0-linux-x64.tar.xz \
