@@ -45,6 +45,9 @@ RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" > 
     && echo "deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list \
     && echo "deb-src http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list \
 
+    && echo "deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib " >> /etc/apt/sources.list \
+    && echo "deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib " >> /etc/apt/sources.list \
+
 #    && echo "deb http://mirrors.aliyun.com/debian-backports/ jessie-backports main contrib non-free" >> /etc/apt/sources.list \
 #    && echo "deb-src http://mirrors.aliyun.com/debian-backports/ jessie-backports main contrib non-free" >> /etc/apt/sources.list \
 
@@ -54,8 +57,7 @@ RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" > 
 
 
 RUN apt-get update \
-    &&  apt-get install -y aptitude \
-    &&  aptitude install -y \
+    &&  apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
