@@ -54,7 +54,8 @@ RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" > 
 
 
 RUN apt-get update \
-    &&  apt-get install -y \
+    &&  apt-get install -y aptitude \
+    &&  aptitude install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
