@@ -9,7 +9,7 @@ MAINTAINER yuxuewen <8586826@qq.com>
 COPY ./composer /usr/bin/composer
 WORKDIR /opt
 
-RUN echo "" > /etc/apt/sources.list \
+RUN echo "#" > /etc/apt/sources.list \
   sed -i "1i deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib \n deb-src http://mirrors.aliyun.com/debian/ stretch main non-free contrib \n deb http://mirrors.aliyun.com/debian-security stretch/updates main \n deb-src http://mirrors.aliyun.com/debian-security stretch/updates main \n deb http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib \n deb-src http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib \n deb http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib \n deb-src http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib"  /etc/apt/sources.list \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
