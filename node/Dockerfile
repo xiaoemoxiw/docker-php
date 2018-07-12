@@ -9,14 +9,7 @@ MAINTAINER yuxuewen <8586826@qq.com>
 COPY ./composer /usr/bin/composer
 WORKDIR /opt
 
-RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" > /etc/apt/sources.list \
-    && echo "deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list \
-    && echo "deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list \
-    && echo "deb-src http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list \
-    && echo "deb http://mirrors.aliyun.com/debian-backports/ jessie-backports main contrib non-free" >> /etc/apt/sources.list \
-    && echo "deb-src http://mirrors.aliyun.com/debian-backports/ jessie-backports main contrib non-free" >> /etc/apt/sources.list \
-    && echo "deb http://mirrors.aliyun.com/debian-security/ jessie/updates main non-free contrib" >> /etc/apt/sources.list \
-    && echo "deb-src http://mirrors.aliyun.com/debian-security/ jessie/updates main non-free contrib" >> /etc/apt/sources.list \
+RUN  sed -i "1i deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib \n deb-src http://mirrors.aliyun.com/debian/ stretch main non-free contrib \n deb http://mirrors.aliyun.com/debian-security stretch/updates main \n deb-src http://mirrors.aliyun.com/debian-security stretch/updates main \n deb http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib \n deb-src http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib \n deb http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib \n deb-src http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib"  /etc/apt/sources.list \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 
