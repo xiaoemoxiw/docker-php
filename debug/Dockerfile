@@ -33,7 +33,7 @@ RUN apt-get update \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug
 
-RUN composer config -g repo.packagist composer https://packagist.phpcomposer.com \
+RUN composer config -g repo.packagist composer https://packagist.laravel-china.org \
     && wget https://npm.taobao.org/mirrors/node/v8.9.0/node-v8.9.0-linux-x64.tar.xz \
     && tar xf node-v8.9.0-linux-x64.tar.xz \
     && mv node-v8.9.0-linux-x64 node
