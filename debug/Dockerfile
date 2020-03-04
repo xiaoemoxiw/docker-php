@@ -34,14 +34,14 @@ RUN apt-get update \
         cron \
     && docker-php-ext-install -j$(nproc) iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql zip opcache \
+    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql zip opcache sg11 \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 RUN composer config -g repo.packagist composer https://packagist.laravel-china.org \
     && wget https://npm.taobao.org/mirrors/node/v10.16.0/node-v10.16.0-linux-x64.tar.xz \
     && tar xf node-v10.16.0-linux-x64.tar.xz \
-    && mv node-v10.16.0-linux-x64 node
+    && mv node-v10.16.0-linux-x64 node7
 
 ENV PATH /opt/node/bin:$PATH
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
